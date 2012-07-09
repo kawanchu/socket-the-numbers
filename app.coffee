@@ -32,9 +32,12 @@ app.listen port, ->
 
 socket = io.listen(app)
 count = 0
-socket.configure ->
-  socket.set "transports", ["xhr-polling"]
-  socket.set "polling duration", 10
+
+# for Heroku
+if app.setting.env == 'production'
+  socket.configure ->
+    socket.set "transports", ["xhr-polling"]
+    socket.set "polling duration", 10
 
 socket.on "connection", (client) ->
   count++
