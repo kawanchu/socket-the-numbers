@@ -3,7 +3,7 @@ socket-the-numbers
 
 Usage
 -----
-npm install -d
+npm install -d  
 coffee app.coffee
 
 Demo
