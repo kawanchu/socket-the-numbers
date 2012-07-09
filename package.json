@@ -1,12 +1,13 @@
 {
-    "name": "application-name"
+    "name": "socket-the-numbers"
   , "version": "0.0.1"
   , "private": true
   , "dependencies": {
       "express": "2.5.x"
-    , "coffee-script": "1.1.2"
-    , "coffeekup": ""
-    , "socket.io": ""
+    , "coffee-script": ">= 0.0.1"
+    , "coffeekup": ">= 0.0.1"
+    , "socket.io": ">= 0.0.1"
+    , "stylus": ">= 0.0.1"
   }
   , "engines" : {
     "node": "0.6.x"
