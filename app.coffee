@@ -34,7 +34,7 @@ socket = io.listen(app)
 count = 0
 
 # for Heroku
-if app.setting.env == 'production'
+if app.settings.env == 'production'
   socket.configure ->
     socket.set "transports", ["xhr-polling"]
     socket.set "polling duration", 10
