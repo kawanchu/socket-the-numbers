@@ -32,6 +32,7 @@ app.listen port, ->
 
 socket = io.listen(app)
 count = 0
+numbers = []
 
 # for Heroku
 if app.settings.env == 'production'
@@ -41,7 +42,6 @@ if app.settings.env == 'production'
 
 socket.on "connection", (client) ->
   count++
-  numbers = null
   client.emit "count-change", count
   client.broadcast.emit "count-change", count
   
