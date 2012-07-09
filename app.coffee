@@ -2,7 +2,7 @@ express = require("express")
 routes = require("./routes")
 socketIO = require("socket.io")
 
-port = process.env.PORT or 3000
+port = process.env.PORT || 5000
 app = module.exports = express.createServer()
 
 app.configure ->
