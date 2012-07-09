@@ -38,6 +38,7 @@ socket.configure ->
 
 socket.on "connection", (client) ->
   count++
+  numbers = null
   client.emit "count-change", count
   client.broadcast.emit "count-change", count
   
@@ -51,5 +52,8 @@ socket.on "connection", (client) ->
     client.broadcast.emit "game-start", numbers
   
   client.on "click-number", (number) ->
-    client.emit "click-number", ('player': 'you', 'number': number)
-    client.broadcast.emit "click-number", ('player': 'challenger', 'number': number)
+    index = numbers.indexOf(number)
+    if index >= 0
+      numbers.splice index, 1
+      client.emit "click-number", ('player': 'you', 'number': number)
+      client.broadcast.emit "click-number", ('player': 'challenger', 'number': number)

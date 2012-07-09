@@ -70,7 +70,6 @@ $ ->
         @challenger.html(@challengersScore)
     
       @nextNumber++
-      console.log @nextNumber
       
       if @nextNumber > 25
         @finishGame()
@@ -84,9 +83,6 @@ $ ->
       else
         @display.html('You Lose ...')
       
-    find: (id) ->
-      @numbers.indexOf(id)    
-
 
 ##### Variables #####
   managementView = new ManagementView
