@@ -1,4 +1,5 @@
 h1 -> @title
+div '(2 player realtime game)'
 
 div '#management', ->
   ul ->
