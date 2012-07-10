@@ -4,12 +4,12 @@ div '#management', ->
   ul ->
     li ->
       span 'Status: '
-      span '#status', -> 'Connecting'
+      span '#status', ->
     li ->
       span 'Player: '
       span '#player', ->
   div ->
-    input type: 'button', value: 'Disconnect', id: 'disconnectBtn'
+    input type: 'button', value: 'Disconnect', id: 'disconnectBtn', disabled: true
     input type: 'button', value: 'Start', id: 'startBtn', disabled: true
 
 div '#game', ->

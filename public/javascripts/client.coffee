@@ -14,6 +14,10 @@ $ ->
       else
         @startBtn.attr("disabled", true)
     
+    connect: ->
+      @status.html("Connecting")
+      @disconnectBtn.removeAttr("disabled")
+    
     disconnect: ->
       @status.html("Not connected")
       @disconnectBtn.attr("disabled", true)
@@ -92,7 +96,7 @@ $ ->
 
 ##### Socket Events #####
   socket.on "connect", ->
-
+    managementView.connect()
   socket.on "count-change", (count) ->
     managementView.countChange(count)
 
