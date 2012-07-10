@@ -2,13 +2,13 @@ $ ->
 ##### View Classes #####
   class ManagementView
     constructor: ->
-      @people = $("#people")
+      @player = $("#player")
       @status = $("#status")
       @disconnectBtn = $("#disconnectBtn")
       @startBtn = $("#startBtn")
     
     countChange: (count) ->
-      @people.html(count)
+      @player.html(count)
       if count == 2
         @startBtn.removeAttr("disabled")
       else
@@ -18,7 +18,7 @@ $ ->
       @status.html("Not connected")
       @disconnectBtn.attr("disabled", true)
       @startBtn.attr("disabled", true)
-      @people.html(null)
+      @player.html(null)
     
     gameStart: ->
       @startBtn.attr("disabled", true)
